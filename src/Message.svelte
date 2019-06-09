@@ -39,3 +39,6 @@
 <br />
 <button on:click={saveMessage} disabled={disabled}>send</button>
 <span class:alert={nbCaracters > maxLength}>{nbCaracters}</span>
+{#if disabled}
+  <span class="alert"> (message too long)</span>
+{/if}
