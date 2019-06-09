@@ -9,7 +9,7 @@
 
 </style>
 
-<Message />
+<Message author="Bob" />
 
 <div>
   <h2>Messages</h2>
