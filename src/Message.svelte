@@ -1,5 +1,9 @@
 <script>
-  export let author = '';
+  import { createEventDispatcher } from "svelte";
+
+  const dispatch = createEventDispatcher();
+
+  export let author = "";
   let message = "";
 
   function saveMessage() {
@@ -8,12 +12,14 @@
       text: message,
       author: author
     };
-    console.log('newMessage', newMessage);
+    console.log("newMessage", newMessage);
+    dispatch('message', newMessage);
     message = "";
   }
 </script>
 
 <style>
+
 </style>
 
 <textarea cols="50" rows="5" bind:value={message} />

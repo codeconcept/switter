@@ -3,13 +3,18 @@
   export let name;
   let message = "";
   let messages = [];
+
+  function addMessage(event) {
+		console.log(event);
+		messages = [event.detail, ...messages];
+  }
 </script>
 
 <style>
 
 </style>
 
-<Message author="Bob" />
+<Message author="Bob" on:message={addMessage} />
 
 <div>
   <h2>Messages</h2>
