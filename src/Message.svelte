@@ -3,7 +3,7 @@
 
   const dispatch = createEventDispatcher();
 
-  export let author = "";
+  let author = "";
   let message = "";
 
   function saveMessage() {
@@ -13,8 +13,9 @@
       author: author
     };
     console.log("newMessage", newMessage);
-    dispatch('message', newMessage);
+    dispatch("message", newMessage);
     message = "";
+    author = "";
   }
 </script>
 
@@ -22,6 +23,8 @@
 
 </style>
 
+<input type="text" bind:value={author} />
+<br />
 <textarea cols="50" rows="5" bind:value={message} />
 <br />
 <button on:click={saveMessage}>send</button>

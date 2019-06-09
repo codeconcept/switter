@@ -11,15 +11,17 @@
 </script>
 
 <style>
-
+.author {
+	font-weight: bold;
+}
 </style>
 
-<Message author="Bob" on:message={addMessage} />
+<Message on:message={addMessage} />
 
 <div>
   <h2>Messages</h2>
   {#each messages as message}
-    <div>By {message.author}</div>
+    <div class="author">By {message.author}</div>
     <div> {message.text} </div>
     <hr />
   {/each}
