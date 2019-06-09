@@ -3,7 +3,7 @@
 	let message = "inital message value";
 
 	function updateMessage(event) {
-		console.log('updateMessage', event.target.value);
+		message = event.target.value;
 	}
 </script>
 
@@ -16,5 +16,6 @@
 <h1>Hello {name}!</h1>
 <textarea cols="50" rows="5" value={message} on:input={updateMessage}></textarea>
 <div>
+  <h3>Preview</h3>
   {message}
 </div>
