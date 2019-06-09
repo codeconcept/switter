@@ -3,10 +3,6 @@
   let message = "";
   let messages = [];
 
-  function updateMessage(event) {
-    message = event.target.value;
-  }
-
   function saveMessage() {
     const newMessage = {
       id: Date.now(),
@@ -14,6 +10,7 @@
       author: "Sam"
     };
     messages = [newMessage, ...messages];
+    message = "";
   }
 </script>
 
@@ -24,7 +21,7 @@
 </style>
 
 <h1>Hello {name}!</h1>
-<textarea cols="50" rows="5" on:input={updateMessage} />
+<textarea cols="50" rows="5" bind:value={message} />
 <br />
 <button on:click={saveMessage}>send</button>
 <div>
