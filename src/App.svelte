@@ -1,4 +1,5 @@
 <script>
+  import Message from "./Message.svelte";
   export let name;
   let message = "";
   let messages = [];
@@ -20,14 +21,7 @@
   }
 </style>
 
-<h1>Hello {name}!</h1>
-<textarea cols="50" rows="5" bind:value={message} />
-<br />
-<button on:click={saveMessage}>send</button>
-<div>
-  <h3>Preview</h3>
-   {message}
-</div>
+<Message />
 
 <div>
   <h2>Messages</h2>
