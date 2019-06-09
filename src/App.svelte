@@ -3,6 +3,7 @@
   export let name;
   let message = "";
 	let messages = [];
+	let isVisible = true;
 
   function addMessage(event) {
     console.log(event);
@@ -20,7 +21,11 @@
     second: "2-digit"
 	};
 	// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat
-  const formatter = new Intl.DateTimeFormat("en-US", options);
+	const formatter = new Intl.DateTimeFormat("en-US", options);
+	
+	function toggle() {
+		isVisible = !isVisible;
+	}
 </script>
 
 <style>
@@ -29,8 +34,10 @@
   }
 </style>
 
+<button on:click={toggle}>{isVisible ? 'hide' : 'show'}</button><br>
+{#if isVisible}
 <Message on:message={addMessage} />
-
+{/if}
 <div>
   <h2>Messages</h2>
   {#each messages as message}
